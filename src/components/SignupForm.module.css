@@ -5,14 +5,8 @@
 }
 .header {
 	padding: 24px 8px;
-	background: hsl(240, 36%, 10%);
+	background: hsl(240deg 60% 25%);
 	color: white;
-}
-
-.form {
-	max-width: 600px;
-	margin: 0 auto;
-	text-align: left;
 }
 
 .step {
@@ -25,7 +19,7 @@
 .step label {
 	color: hsl(240deg 30% 30%);
 }
-.step input:not([type="radio"]) {
+.step input:not([type='radio']) {
 	display: block;
 	width: 100%;
 	margin-bottom: 16px;

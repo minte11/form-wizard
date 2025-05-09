@@ -1,29 +1,29 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-import styles from "./StepList.module.css";
+import styles from './StepList.module.css';
 
-function StepList({ steps, currentStep, setCurentStep, allowedStep }) {
-	const handleClick = (step) => {
-		if (step > allowedStep) return;
-		setCurentStep(step);
-	};
+function StepList() {
 	return (
 		<ol className={styles.stepList}>
-			{steps.map(({ step, name }) => (
-				<li
-					key={step}
-					className={clsx(
-						styles.stepListItem,
-						step === currentStep && styles.active,
-						step <= allowedStep && styles.passed
-					)}
-					onClick={() => handleClick(step)}
-				>
-					<span className={styles.stepNum}>{step}</span>
-					{name}
-				</li>
-			))}
+			<li className={clsx(styles.stepListItem, styles.active)}>
+        <span className={styles.stepNum}>
+          1
+        </span>
+				Info
+			</li>
+			<li className={styles.stepListItem}>
+        <span className={styles.stepNum}>
+          2
+        </span>
+				Plan
+			</li>
+			<li className={styles.stepListItem}>
+        <span className={styles.stepNum}>
+          3
+        </span>
+				Summary
+			</li>
 		</ol>
 	);
 }

@@ -20,12 +20,6 @@
 .stepListItem.active {
 	opacity: 1;
 }
-.stepListItem.passed {
-	cursor: pointer;
-}
-.stepListItem.passed:hover {
-	opacity: 1;
-}
 .stepNum {
 	display: flex;
 	justify-content: center;
