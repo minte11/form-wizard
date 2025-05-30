@@ -17,9 +17,20 @@
 	font-weight: 500;
 	opacity: 0.6;
 }
+
+.stepListItem.allowed {
+	opacity: 0.8;
+}
+
+.stepListItem.allowed:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
 .stepListItem.active {
 	opacity: 1;
 }
+
 .stepNum {
 	display: flex;
 	justify-content: center;

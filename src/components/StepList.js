@@ -3,27 +3,26 @@ import clsx from 'clsx';
 
 import styles from './StepList.module.css';
 
-function StepList() {
+function StepList ({steps, currentStep, allowedStep, handleStepChange}) {
 	return (
 		<ol className={styles.stepList}>
-			<li className={clsx(styles.stepListItem, styles.active)}>
-        <span className={styles.stepNum}>
-          1
-        </span>
-				Info
-			</li>
-			<li className={styles.stepListItem}>
-        <span className={styles.stepNum}>
-          2
-        </span>
-				Plan
-			</li>
-			<li className={styles.stepListItem}>
-        <span className={styles.stepNum}>
-          3
-        </span>
-				Summary
-			</li>
+			{steps.map(step => (
+				<li className={
+					clsx(
+						styles.stepListItem,
+						step.step <= allowedStep && styles.allowed,
+						currentStep === step.step && styles.active,
+					)}
+				    key={step.step}
+				    onClick={() => handleStepChange(step.step)}
+				>
+					<span className={styles.stepNum}> {step.step}</span>
+					{
+						step.title
+					}
+				</li>)
+			)
+			}
 		</ol>
 	);
 }
